@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+      "module": "commonjs",
+      "target": "es6",
+      "moduleResolution": "node",
+      "noImplicitAny": false,
+      "sourceMap": true,
+      "rootDir":"./server/src",
+      "outDir":"./server/dist",
+      "allowJs": true,
+      "watch":true
+  },
+  "include":[
+      "./server/src/**/*"
+  ],
+  "exclude":[
+      "views",
+      "node_modules",
+      "static"
+  ]
+}
