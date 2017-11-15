@@ -19,22 +19,22 @@ export let CheckAuth = (ctx) => {
     if (decoded.userInfo) {
       return Promise.resolve({
         status: 1,
-        result: decoded.userInfo
+        result: decoded.userInfo,
       })
     } else {
       return Promise.resolve({
         status: 403,
         result: {
-          errInfo: '没有授权'
-        }
+          errInfo: '没有授权',
+        },
       })
     }
   } catch (err) {
     return Promise.resolve({
       status: 503,
       result: {
-        errInfo: '解密错误'
-      }
+        errInfo: '解密错误',
+      },
     })
   }
 }

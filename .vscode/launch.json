@@ -5,13 +5,15 @@
   "version": "0.2.0",
   "configurations": [ 
     {
+      "name": "ts-node",
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
-      "sourceMaps": true,
-      "program": "${workspaceFolder}/server/build/dev-server.js",
-      "outFiles": [ 
-        "${workspaceFolder}/server/dist/**/*.js"
+      "protocol": "inspector",
+      // Use ts-node as drop-in replacement for node
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ts-node",
+      // Manually specify the args to pass
+      "runtimeArgs": [
+          "${workspaceRoot}/server/src/app.ts"
       ]
     }
   ]

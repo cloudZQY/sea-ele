@@ -2,7 +2,7 @@ import * as Koa2 from 'koa'
 import * as KoaBody from 'koa-body'
 import * as KoaStatic from 'koa-static2'
 import {
-  System as SystemConfig
+  System as SystemConfig,
 } from './config'
 import * as path from 'path'
 import MainRoutes from './routes/main-routes'
@@ -36,11 +36,11 @@ app
     multipart: true,
     strict: false,
     formidable: {
-      uploadDir: path.join(__dirname, '../assets/uploads/tmp')
+      uploadDir: path.join(__dirname, '../assets/uploads/tmp'),
     },
     jsonLimit: '10mb',
     formLimit: '10mb',
-    textLimit: '10mb'
+    textLimit: '10mb',
   })) // Processing request
   // .use(PluginLoader(SystemConfig.System_plugin_path))
   .use(MainRoutes.routes())

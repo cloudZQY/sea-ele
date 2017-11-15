@@ -1,2 +1,11 @@
-let requireDirectory = require('require-directory')
-export default requireDirectory(module)
+import * as api from './api'
+import * as auth from './auth'
+import upload from './upload'
+
+const controllers = {
+  api,
+  auth,
+  upload,
+}
+
+export default controllers
