@@ -1,5 +1,5 @@
-import models from '../models/'
-export let Get = async (ctx) => {
+import { Context } from 'koa'
+export let Get = async (ctx: Context) => {
   ctx.body = {
     result: 'get',
     name: ctx.params.name,
@@ -7,7 +7,7 @@ export let Get = async (ctx) => {
   }
 }
 
-export let Post = async (ctx) => {
+export let Post = async (ctx: Context) => {
   ctx.body = {
     result: 'post',
     name: ctx.params.name,
@@ -15,7 +15,7 @@ export let Post = async (ctx) => {
   }
 }
 
-export let Put = (ctx) => {
+export let Put = (ctx: Context) => {
   ctx.body = {
     result: 'put',
     name: ctx.params.name,
@@ -23,7 +23,7 @@ export let Put = (ctx) => {
   }
 }
 
-export let Delect = (ctx) => {
+export let Delect = (ctx: Context) => {
   ctx.body = {
     result: 'delect',
     name: ctx.params.name,

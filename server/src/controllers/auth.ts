@@ -1,6 +1,8 @@
 import * as jwt from 'jsonwebtoken'
 import * as fs from 'fs'
 import * as path from 'path'
+import { Context } from 'koa'
+import User from '../models/user'
 
 const publicKey = fs.readFileSync(path.join(__dirname, '../../publicKey.pub'))
 
@@ -12,10 +14,10 @@ const publicKey = fs.readFileSync(path.join(__dirname, '../../publicKey.pub'))
 /**
  * 检查授权是否合法
  */
-export let CheckAuth = (ctx) => {
-  let token = ctx.request.header.authorization
+export let CheckAuth = (ctx: Context) => {
+  let token: string = ctx.request.header.authorization
   try {
-    let decoded = jwt.verify(token.substr(7), publicKey)
+    let decoded: any = jwt.verify(token.substr(7), publicKey)
     if (decoded.userInfo) {
       return Promise.resolve({
         status: 1,
@@ -39,7 +41,7 @@ export let CheckAuth = (ctx) => {
   }
 }
 
-export let Post = (ctx) => {
+export let Post = (ctx: Context) => {
   switch (ctx.params.action) {
     case 'check':
       return CheckAuth(ctx).then(result => { ctx.body = result })

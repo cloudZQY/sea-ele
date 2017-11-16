@@ -13,6 +13,7 @@
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ts-node",
       // Manually specify the args to pass
       "runtimeArgs": [
+          "--disableWarnings",
           "${workspaceRoot}/server/src/app.ts"
       ]
     }

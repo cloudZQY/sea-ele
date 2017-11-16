@@ -3,10 +3,15 @@
 
 ### 启动步骤
 ``` shell
-yarn global add typescript concurrently
+yarn global add typescript concurrently ts-node ts-node-dev
 yarn
 yarn start
 ```
+### 数据库
+安装mysql数据库，config在server/config/index里
+约定用户名root 密码root
+CREATE DATABASE sea_ele
+source server/db/init.db
 
 ### 前后端开发启动
 `yarn start`
@@ -21,13 +26,13 @@ yarn start
 vscode： 点击调试，添加配置，配置中添加
 ``` json
 {
+  "name": "ts-node",
   "type": "node",
   "request": "launch",
-  "name": "Launch Program",
-  "sourceMaps": true,
-  "program": "${workspaceFolder}/server/build/dev-server.js",
-  "outFiles": [ 
-    "${workspaceFolder}/server/dist/**/*.js"
+  "protocol": "inspector",
+  "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/ts-node",
+  "runtimeArgs": [
+      "${workspaceRoot}/server/src/app.ts"
   ]
 }
 ```

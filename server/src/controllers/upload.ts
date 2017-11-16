@@ -24,18 +24,18 @@ export default (ctx) => {
   console.log('parse ok')
 
   // 文件将要上传到哪个文件夹下面
-  var uploadfolderpath = path.join(__dirname, '../../assets/uploads')
+  const uploadfolderpath = path.join(__dirname, '../../assets/uploads')
 
-  var files = ctx.request.body.files
+  const files = ctx.request.body.files
 
   // formidable 会将上传的文件存储为一个临时文件，现在获取这个文件的目录
-  var tempfilepath = files.file.path
+  const tempfilepath = files.file.path
   // 获取文件类型
-  var type = files.file.type
+  const type = files.file.type
 
   // 获取文件名，并根据文件名获取扩展名
-  var filename = files.file.name
-  var extname = filename.lastIndexOf('.') >= 0 ? filename.slice(filename.lastIndexOf('.') - filename.length) : ''
+  let filename = files.file.name
+  let extname = filename.lastIndexOf('.') >= 0 ? filename.slice(filename.lastIndexOf('.') - filename.length) : ''
   // 文件名没有扩展名时候，则从文件类型中取扩展名
   if (extname === '' && type.indexOf('/') >= 0) {
     extname = '.' + type.split('/')[1]
@@ -44,9 +44,9 @@ export default (ctx) => {
   filename = Math.random().toString().slice(2) + extname
 
   // 构建将要存储的文件的路径
-  var filenewpath = path.join(uploadfolderpath, filename)
+  const filenewpath = path.join(uploadfolderpath, filename)
 
-  var result = ''
+  let result = ''
 
   // 将临时文件保存为正式的文件
   try {
