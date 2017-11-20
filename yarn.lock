@@ -95,6 +95,12 @@
   version "3.2.2"
   resolved "http://registry.npm.taobao.org/@types/koa-compose/download/@types/koa-compose-3.2.2.tgz#dc106e000bbf92a3ac900f756df47344887ee847"
 
+"@types/koa-jwt@^3.2.2":
+  version "3.2.2"
+  resolved "http://registry.npm.taobao.org/@types/koa-jwt/download/@types/koa-jwt-3.2.2.tgz#dd49711e6607e11775696539c69f21da18e37201"
+  dependencies:
+    "@types/koa" "*"
+
 "@types/koa-router@^7.0.24":
   version "7.0.24"
   resolved "http://registry.npm.taobao.org/@types/koa-router/download/@types/koa-router-7.0.24.tgz#24fbba35f9a7edffadfd57c96963f8421a85576b"
@@ -3794,7 +3800,7 @@ koa-unless@1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/koa-unless/download/koa-unless-1.0.0.tgz#5aa57384bc882568afc90ac04852a3d58658aeeb"
 
-koa@^2.3.0:
+koa@^2.4.1:
   version "2.4.1"
   resolved "http://registry.npm.taobao.org/koa/download/koa-2.4.1.tgz#d449cfb970a7e9da571f699eda40bb9e32eb1484"
   dependencies:
