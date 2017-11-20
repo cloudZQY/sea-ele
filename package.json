@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run dev",
     "client-dev": "webpack-dev-server --inline --progress --config client/build/webpack.dev.conf.js",
-    "server-dev": "ts-node-dev",
+    "server-dev": "ts-node-dev --fast --respawn server/src/app.ts",
     "dev": "concurrently -k -p \"[{name}]\" -n \"server,client\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run server-dev\" \"npm run client-dev\""
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "require-directory": "^2.1.1",
     "sequelize": "^4.16.1",
     "vue": "^2.5.2",
+    "vue-beauty": "^2.0.0-beta.8",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
